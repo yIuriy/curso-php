@@ -11,13 +11,15 @@
 <body class="bg-dark text-white text-right">
 
     <div class="container text-right text-black bg-white rounded p-1 mt-4" style="width: 470px">
-        <h2 class="p-1 text-center">Resultado do Final</h2>
+        <h2 class="p-1 text-center">Conversão de moedas v1.0</h2>
         <?php
-        $valorEmRealBrasileiro = (float) $_GET["valorEmRealBrasileiro"];
-        const COTACAODOLAR = 5.22;
+        $padraMoeda = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
+        $valorEmRealBrasileiro = (float) $_GET["valorEmRealBrasileiro"] ?? 0; 
+        const COTACAODOLAR = 4.92;
         $valorEmDolarAmericano = (float) $valorEmRealBrasileiro / COTACAODOLAR;
-        echo "<p>Seus R$" . number_format($valorEmRealBrasileiro, 2, ',', '.') . " equivalem a <strong>US$ " . number_format($valorEmDolarAmericano, 2, '.', ',') . "</strong></p>";
-        echo "*<strong>Cotação fixa de R$" . number_format(COTACAODOLAR, 2, '.', ',') . "</strong> informada diretamente no código."
+
+        echo "<p>Seus " . numfmt_format_currency($padraMoeda, $valorEmRealBrasileiro, "BRL") ." equivalem a <strong>" .numfmt_format_currency($padraMoeda, $valorEmDolarAmericano, "USD"). "</strong></p>";
+        echo "*<strong>Cotação fixa de " .numfmt_format_currency($padraMoeda, COTACAODOLAR, "BRL") . "</strong> informada diretamente no código."
 
         ?>
         <p class="text-center mt-2 mb-1"><a href="javascript:history.go(-1)" class="text-black btn bg-primary text-white">→ Voltar para a página anterior.</a></p>

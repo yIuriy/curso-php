@@ -9,7 +9,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <title>Conversor de Moedas V1.0</title>
+    <title>Analisador de Número Real</title>
   </head>
 
   <body class="bg-dark text-white">
@@ -18,26 +18,26 @@
       class="container text-right text-black bg-white rounded p-2 mt-3"
       style="width: 470px"
     >
-      <h1 class="p-1 text-center">Conversor de Moedas V1.0</h1>
+      <h1 class="p-1 text-center">Analisador de Número Real</h1>
       <form
-        action="conversao.php" 
+        action="analisador.php" 
         method="get"
         class="p-2 rounded"
         style="background-color: lightblue"
       >
         <div class="mb-3">
-          <label for="valorEmRealBrasileiro" class="d-block pb-1"
-            >Quantos R$ você tem na carteira?
+          <label for="numeroReal" class="d-block pb-1"
+            >Número Real:
           </label>
           <input
             type="number"
-            name="valorEmRealBrasileiro"
-            id="valorEmRealBrasileiro"
+            name="numeroReal"
+            id="numeroReal"
             class="btn bg-white w-100"
-            step="0.01"
+            step="0.001"
           />
         </div>
-        <button type="submit" class="btn btn-primary w-100">Calcular</button>
+        <button type="submit" class="btn btn-primary w-100">Analisar</button>
       </form>
     </div>
   </body>
