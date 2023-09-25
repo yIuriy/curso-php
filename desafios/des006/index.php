@@ -12,7 +12,7 @@
 <body class="bg-dark text-white">
   <?php
   $valorDividendo = $_GET["valorDividendo"] ?? 0;
-  $valorDivisor = $_GET["valorDivisor"] ?? 0;
+  $valorDivisor = $_GET["valorDivisor"] ?? 1;
   if ($valorDividendo == "") {
     $valorDividendo = (int) 0;
   }

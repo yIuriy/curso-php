@@ -2,7 +2,7 @@
       class="container text-right text-black bg-white rounded p-2"
       style="width: 370px"
     >
-      <form action="superglobais.php?tipo=Aluno&turno=Tarde" method="get">
+      <form action="" method="get">
         <div class="mb-3">
           <label for="" class="form-label"></label>
           <input
@@ -14,7 +14,7 @@
           />
         </div>
         <div class="mb-3">
-          <label for="" class="form-label">Senha</label>
+          <label for="" class="form-label"></label>
           <input
             type=""
             class="form-control"
