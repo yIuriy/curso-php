@@ -11,23 +11,30 @@
 <body class="bg-dark text-white">
 
   <?php
-
+    $numeroInformado = (float) $_GET["numeroInformado"] ?? 0;
+    $raizQuadradaDoNumero = sqrt($numeroInformado);
+    $raizCubicaDoNumero = pow($numeroInformado,1.0/3.0);
   ?>
 
   <h1 class="p-1 text-center">Informe um número</h1>
   <div class="container text-right text-black bg-white rounded p-2" style="width: 370px">
     <form action="" method="get">
       <div class="mb-3">
-        <label for="" class="form-label"></label>
-        <input type="number" class="form-control" id="" name="" aria-describedby="seuNome" value="<?= "$salarioTotal" ?>" />
+        <label for="numeroInformado" class="form-label">Número:</label>
+        <input type="number" class="form-control" id="numeroInformado" name="numeroInformado" aria-describedby="seuNome" value="<?=$numeroInformado?>" />
       </div>
 
-      <div class="text-center"><button type="submit" class="btn btn-primary w-50">Enviar</button></div>
+      <div class="text-center"><button type="submit" class="btn btn-primary w-50">Calcular Raízes</button></div>
     </form>
   </div>
-  <div class="container text-right text-black bg-white rounded p-1 mt-2" style="width: 370px">
+  <div class="container text-right text-black bg-white rounded p-2 mt-2" style="width: 370px">
     <h3 class="m-1">Resultado Final</h3>
     <?php
+  echo "<p>Analisando o <strong>número $numeroInformado</strong>, temos:</p>";
+  echo"<ul>
+  <li> A sua raiz quadrada é <strong>".number_format($raizQuadradaDoNumero,3)."</strong>
+  <li> A sua raiz cúbiva é <strong>".number_format($raizCubicaDoNumero,3)."</strong>
+  </ul>"
 
     ?>
   </div>
